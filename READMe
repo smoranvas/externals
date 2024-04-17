@@ -1,0 +1,32 @@
+
+ 
+Structure of the EXTERNALS code:
+
+1. INP/clasd2.inp  - this file is the "master" input file that basically just points to the other required inputs.
+
+2. RUNPLAN/clas_kin.inp - this file contains the kinematics at which to calculate the cross section and RC. Note that it's pretty sensitive to formatting.
+
+3. TARG/targ.D2tuna - this file contains a lot of info about the target (Z,A, geometry, model to use, etc.). Right now, the only variables that matter are Z and A since the program only calculates the internal corrections.  The model choice is also hardwired for now to use F1F209 from Peter Bosted.
+
+4. OUT/clasd2_details.out  - this gives more detailed output than the summary table above.
+
+5. To run, you just use the little script (run_extern) in the top level directory.
+The usage is: "./run_extern <input-file>", leave the ".inp" off the master input file. 
+
+To compile on the UTFSM cluster run:
+1.  rm  *.o
+####2.  source /user/a/alaoui/software/env_scripts/set_64bit_taya.sh --roover 6.10.02 --cerver 2005 --softdir /user/a/alaoui/software/ --clasver ver1 
+2. source set_env.sh
+3.  make
+
+Running the code:
+
+1. Deuterium target
+  ./run_extern clasd2
+2. Lead target 
+   ./run_extern clasPb208
+ 
+
+Output files are in OUT/
+
+P.S.  the same code rc_Coulomb.C is in RC/ and in Coulomb/RC_CC

@@ -1,0 +1,9 @@
+starting
+Liquid Carbon
+Liquid Lead
+Liquid Iron
+Solid Targets
+Iron
+Pb
+Carbon
+done
